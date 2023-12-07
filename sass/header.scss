@@ -1,0 +1,24 @@
+/*HEADER Y NAV*/
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /* Distribuye los elementos a lo largo del eje principal (horizontal) */
+    align-items: center; /* Alinea los elementos al centro del eje transversal (vertical) */
+    padding: 10px; /* Añade algún relleno para mayor espacio alrededor del logo y la navegación */
+}
+
+header img {
+    width: 200px; /* Ajusta el tamaño del logo según tus preferencias */
+    height: auto; /* Mantiene la proporción del logo */
+}
+header {
+    height: 100px;
+    text-align: center;
+    background-color: #FF6347; /* Fondo en rojo tomate */
+}
+
+header nav ul li a:hover{
+    color: bisque;
+    font-size: 15px;
+    margin-left: 10px;
+}

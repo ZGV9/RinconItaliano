@@ -4,10 +4,25 @@
         
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/style.css">
         <title>Contacto</title>
-    </head>
-    <body>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="icon" href="../Icons/local_pizza_FILL0_wght400_GRAD0_opsz24.png" type="image/x-icon">
+        <link rel="shortcut icon" href="ruta/de/tu/favicon.ico" type="image/x-icon">
+        <style>
+          body {
+            background-color: #f5deb3; /* Color verde almendra */
+          }
+          .container {
+            background-color: #F5DEB3; /* Color de fondo blanco */
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+          }
+        </style>
+      </head>
+    <>
 
         <!--ESTRUCTURA #1 / HEADER-NAV-->
         <header>
@@ -16,7 +31,7 @@
                 <ul> <!--LISTA DESORDENADA-->
                     <li><a href="../index.html">Inicio</a></li>
                     <li><a href="../Pages/historia.html">Historia y Cultura</a></li>
-                    <li><a href="../Pages/contacto.html">Reservas</a></li>
+                    <li><a href="../Pages/contacto.html">Contacto</a></li>
                     <li><a href="../Pages/conocenos.html">Nosotros</a></li>
                     <li><a href="../Pages/imagenes.html">Carta</a></li>
                 </ul>
@@ -24,55 +39,47 @@
         </header>
 
         <!--ESTRUCTURA #2 / MAIN/SECTIONS-ARTICLES-DIVS-ASIDES-->
-        <main>
-            <section>
-                <h1>Contacto</h1>
-            </section>
 
-            <section>
-                <article>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13135.116034924837!2d-58.38658930601806!3d-34.60974928993797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4aa9f0a6da5edb%3A0x11bead4e234e558b!2sObelisco!5e0!3m2!1ses-419!2sar!4v1698188359922!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </article>
-                <article>
-                    <form action="#">
-                        <!--ESTRUCTURA NOMBRE-->
-                        <label for="nombre">
-                            Nombre:
-                            <br>
-                            <input type="text">
-                        </label>
-                        <br> <!--SALTO DE LINEA-->
-                        <!--ESTRUCTURA Telefono-->
-                        <label for="telefono">
-                            Telefono:
-                            <br>
-                            <input type="telefono">
-                        </label>
-                        <br>
-                        <!--ESTRUCTURA Horario-->
-                        <p>Elegir Horario</p>
-                        <select name="Locales" id="Locales">
-                            <option value="Hora1">20:00</option>
-                            <option value="Hora2">20:30</option>
-                            <option value="Hora3">21:00</option>
-                        </select>
-                        <br>
-                        <!--ESTRUCTURA SELECCION EMPRESA-->
-                        <p>Elegir Local</p>
-                        <select name="Locales" id="Locales">
-                            <option value="local1">Local 1</option>
-                            <option value="local2">Local 2</option>
-                            <option value="local3">Local 3</option>
-                        </select>
-                        <br>   
-                        <!--BOTONES ENVIAR/RESETEAR-->
-                        <input type="submit" value="Reservar">
-                        <br>
-                        <input type="reset" value="Resetear">
-                    </form>
-                </article>
-            </section>
-        </main>
+        <div class="container">
+            <h1 class="text-center">Contacto para Adquirir una Franquicia</h1>
+            <p class="text-center">¡Gracias por tu interés en adquirir una franquicia con nosotros! Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.</p>
+            
+            <!-- Formulario de Contacto -->
+            <form action="procesar_formulario.php" method="POST">
+              <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+              </div>
+          
+              <div class="form-group">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" class="form-control" id="correo" name="correo" required>
+              </div>
+          
+              <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" class="form-control" id="telefono" name="telefono" required>
+              </div>
+          
+              <div class="form-group">
+                <label for="ubicacion">Ubicación de Interés:</label>
+                <input type="text" class="form-control" id="ubicacion" name="ubicacion" required>
+              </div>
+          
+              <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+              </div>
+          
+              <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+            </form>
+          </div>
+          
+          <!-- Scripts de Bootstrap y jQuery -->
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+          
 
         <!--ESTRUCTURA #3 / FOOTER-->
         <footer>

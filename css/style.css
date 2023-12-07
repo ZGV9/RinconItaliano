@@ -1,25 +1,6 @@
 @charset "UTF-8";
-/*RESET CSS*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-a, li {
-  color: black;
-  font-size: large;
-  display: inline-block;
-  font-style: italic;
-  list-style: none;
-  text-decoration: none;
-  padding: 2px;
-}
-
-/*======================================*/
-/*INDEX*/
-/*======================================*/
 /*HEADER Y NAV*/
+@import 'animate.css';
 header {
   display: flex;
   flex-direction: row;
@@ -45,6 +26,35 @@ header nav ul li a:hover {
   margin-left: 10px;
 }
 
+/*FOOTER*/
+footer {
+  background-color: #6B8E23; /* Fondo en verde albahaca */
+  color: #fff; /* Texto en color blanco para contrastar con el fondo */
+  padding: 20px; /* Ajusta el espacio interno del footer según tus necesidades */
+  text-align: center; /* Centra el texto dentro del footer */
+  margin-top: auto;
+}
+
+/*RESET CSS*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a, li {
+  color: black;
+  font-size: large;
+  display: inline-block;
+  font-style: italic;
+  list-style: none;
+  text-decoration: none;
+  padding: 2px;
+}
+
+/*======================================*/
+/*INDEX*/
+/*======================================*/
 /*SECCION BANNER*/
 body {
   /* Propiedades para la imagen de fondo */
@@ -102,15 +112,6 @@ body {
   width: 100%;
   height: auto;
   border-radius: 50px; /* Es opcional: agrega esquinas redondeadas a las imágenes */
-}
-
-footer {
-  /* Propiedades para el footer */
-  background-color: #6B8E23; /* Fondo en verde albahaca */
-  color: #fff; /* Texto en color blanco para contrastar con el fondo */
-  padding: 20px; /* Ajusta el espacio interno del footer según tus necesidades */
-  text-align: center; /* Centra el texto dentro del footer */
-  margin-top: auto;
 }
 
 /* Estilos de la sección */
@@ -175,6 +176,69 @@ footer {
   color: #F5DEB3;
   font-size: 20px;
   margin-bottom: 70px;
+}
+
+/* Estilos generales para todas las pantallas */
+body {
+  font-family: "Arial", sans-serif;
+  /* Otros estilos generales */
+}
+
+/* Media query para dispositivos móviles (ej. iPhone, Android) */
+@media only screen and (max-width: 767px) {
+  body {
+    font-size: 15px;
+  }
+  .header {
+    font-size: 10px;
+    padding: 10px;
+    text-align: center;
+  }
+  .menu {
+    display: block;
+  }
+  .main-content {
+    width: 100%;
+  }
+}
+/* Media query para tablets (ej. iPad) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+  .imagenPizza {
+    font-size: 18px;
+  }
+  .header {
+    font-size: 10px;
+    padding: 10px;
+    text-align: center;
+  }
+  .menu {
+    display: block;
+  }
+  .main-content {
+    width: 100%;
+  }
+}
+/* Media query para pantallas más grandes (escritorio) */
+@media only screen and (min-width: 1025px) {
+  body {
+    font-size: 25px;
+  }
+  .imagenPizza {
+    font-size: 25px;
+  }
+  .header {
+    padding: 10px;
+    text-align: center;
+  }
+  .menu {
+    display: block;
+  }
+  .main-content {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
