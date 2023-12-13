@@ -1,0 +1,16 @@
+/*RESET CSS*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a , li {
+    color: black;
+    font-size: large;
+    display: inline-block;
+    font-style:italic;
+    list-style: none;
+    text-decoration: none;
+    padding: 2px;
+}

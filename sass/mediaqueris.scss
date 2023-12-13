@@ -1,0 +1,76 @@
+
+/* Estilos generales para todas las pantallas */
+
+body {
+    font-family: 'Arial', sans-serif;
+    /* Otros estilos generales */
+}
+
+/* Media query para dispositivos móviles (ej. iPhone, Android) */
+@media only screen and (max-width: 767px) {
+    body {
+        font-size: 15px;
+    }
+
+    .header {
+        font-size: 10px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .main-content {
+        width: 100%;
+    }
+}
+
+
+/* Media query para tablets (ej. iPad) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    body {
+        font-size: 18px;
+    }
+    .imagenPizza {
+        font-size: 18px;
+    }
+    .header {
+        font-size: 10px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .main-content {
+        width: 100%;
+    }
+}
+
+
+
+/* Media query para pantallas más grandes (escritorio) */
+@media only screen and (min-width: 1025px) {
+    body {
+        font-size: 25px;
+    }
+    .imagenPizza{
+        font-size: 25px;
+    }
+    .header {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .main-content {
+        width: 100%;
+    }
+}

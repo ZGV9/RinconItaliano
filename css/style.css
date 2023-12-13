@@ -1,6 +1,23 @@
 @charset "UTF-8";
-/*HEADER Y NAV*/
+/*RESET CSS*/
 @import 'animate.css';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a, li {
+  color: black;
+  font-size: large;
+  display: inline-block;
+  font-style: italic;
+  list-style: none;
+  text-decoration: none;
+  padding: 2px;
+}
+
+/*HEADER Y NAV*/
 header {
   display: flex;
   flex-direction: row;
@@ -35,26 +52,34 @@ footer {
   margin-top: auto;
 }
 
-/*RESET CSS*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* HISTORIA Y CULTURA SOBRE LA PIZZA */
+.historiaPizza1, .historiaPizza2, .historiaPizza3, .tituloHistoria {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  text-align: center;
+  font-size: x-large;
+  font-style: inherit;
+  margin-bottom: 70px;
+  color: #F5DEB3;
 }
 
-a, li {
-  color: black;
-  font-size: large;
-  display: inline-block;
-  font-style: italic;
-  list-style: none;
-  text-decoration: none;
-  padding: 2px;
+/* NOSOTROS */
+.contenedorNuestraHistoria {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente los elementos */
+  justify-content: center; /* Centra verticalmente los elementos */
+  text-align: center; /* Centra el texto dentro de cada elemento */
+  margin: auto;
 }
 
-/*======================================*/
-/*INDEX*/
-/*======================================*/
+.nuestraHistoria, .nuestraHistoria2, .nuestraHistoria3 {
+  color: #F5DEB3;
+  font-size: 20px;
+  margin-bottom: 70px;
+}
+
 /*SECCION BANNER*/
 body {
   /* Propiedades para la imagen de fondo */
@@ -148,34 +173,6 @@ body {
   font-size: larger;
   margin: 0;
   margin-bottom: 40px;
-}
-
-/* HISTORIA Y CULTURA SOBRE LA PIZZA */
-.historiaPizza1, .historiaPizza2, .historiaPizza3, .tituloHistoria {
-  display: flex;
-  flex-wrap: wrap;
-  margin: auto;
-  text-align: center;
-  font-size: x-large;
-  font-style: inherit;
-  margin-bottom: 70px;
-  color: #F5DEB3;
-}
-
-/* NOSOTROS */
-.contenedorNuestraHistoria {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centra horizontalmente los elementos */
-  justify-content: center; /* Centra verticalmente los elementos */
-  text-align: center; /* Centra el texto dentro de cada elemento */
-  margin: auto;
-}
-
-.nuestraHistoria, .nuestraHistoria2, .nuestraHistoria3 {
-  color: #F5DEB3;
-  font-size: 20px;
-  margin-bottom: 70px;
 }
 
 /* Estilos generales para todas las pantallas */
