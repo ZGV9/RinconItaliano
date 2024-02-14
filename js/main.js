@@ -1,28 +1,5 @@
-// Ignorar ()[]{} \n
-
-/*
-function solicitarPrecio () {
-    let precioProducto = Number(prompt('Ingrese el Precio'))
-    console.log('El precio ingresado es $' + precioProducto)
-}
-solicitarPrecio()
-function solicitarIva () {
-    let iva = Number(prompt('Ingrese el Monto de IVA'))
-    console.log('El IVA ingresado es %' + iva)
-}
-solicitarIva()
-function sumar () {
-    let precioFinal = precioProducto + iva
-    console.log('El precio final es de $' + precioFinal)
-}
-
-sumar()
-
-*/
 
 //Funciones
-
-
 function saludar () {
     let nombre = prompt("Porfavor, Ingrese su nombre:")
     console.log(
@@ -32,68 +9,57 @@ function saludar () {
         "A continuación, seleccione los productos que desea agregar a la orden"
         )
 }
-
-let productoCarrito
-function agregarProducto () {
-    productoCarrito = parseInt(prompt(
-        "Pizzas: \n 1: Pizza Margarita \n 2: Pizza Champiniones  \n 3: Pizza Pepperoni  \n 4: Pizza Capricciosa")
-        )
-    
-    if (productoCarrito === 1) {
-        console.log("Seleccionasate Pizza Margarita")
-    } else if (productoCarrito === 2) {
-        console.log("Seleccionasate Pizza Champiniones")
-    } else if (productoCarrito === 3) {
-        console.log("Seleccionasate Pizza Pepperoni")
-    } else if (productoCarrito === 4) {
-        console.log("Seleccionasate Pizza Capricciosa")
-    } else console.log("La opcion seleccionada no es valida")
-}
-
-function finalizarCompra () {
-    if (productoCarrito == 1) {
-        alert("El precio final de tu Pizza Margarita es " + margherita * 1.21)
-    } else if (productoCarrito == 2) {
-        alert("El precio final de tu Pizza Champiniones es " + champiniones * 1.21)
-    } else if (productoCarrito == 3) {
-        alert("El precio final de tu Pizza Pepperoni es " + pepperoni * 1.21)
-    } else if (productoCarrito == 4) {
-        alert("El precio final de tu Pizza Capricciosa es " + capricciosa * 1.21)
-    } else alert("La opcion seleccionada no es valida")    
-}
-
-
-
-//Main 
-
 saludar()
-agregarProducto()
 
+  // Definir las opciones de pizza como objetos
 
-let confirmarContinuacion = parseInt(prompt(
-    "Que desea realizar a continuacion? \n 1: Finalizar Compra \n 2: Continuar Comprando \n 3: Cancelar Compra")
-)
+  const pizzas = [
+    { id: 1, nombre: 'Pizza Margarita', precio: 2200 },
+    { id: 2, nombre: 'Pizza Pepperoni', precio: 2600 },
+    { id: 3, nombre: 'Pizza Vegetariana', precio: 2400 },
+    { id: 4, nombre: 'Pizza Hawaiana', precio: 2900 },
+    { id: 5, nombre: 'Pizza Capricciosa', precio: 3600 },
+    { id: 6, nombre: 'Pizza Champiniones', precio: 3200 }
+  ];
+  
+  // Función para mostrar las opciones de pizza
+  function mostrarMenu() {
+    console.log('Menú de Pizzas:');
+    pizzas.forEach(pizza => {
+      console.log(`${pizza.id}. ${pizza.nombre} - $${pizza.precio}`);
+    });
+  }
+  
+  // Función para agregar una pizza al carrito
+  function agregarAlCarrito(carrito, idPizza) {
+    const pizzaSeleccionada = pizzas.find(pizza => pizza.id === idPizza);
+    if (pizzaSeleccionada) {
+      carrito.push(pizzaSeleccionada);
+      console.log(`¡${pizzaSeleccionada.nombre} agregada al carrito!`);
+    } else {
+      console.log('Pizza no encontrada en el menú.');
+    }
+  }
+  
+  // Función para calcular el total del carrito
+  function calcularTotal(carrito) {
+    return carrito.reduce((total, pizza) => total + pizza.precio, 0);
+  }
+  
+  // Dandole un uso
 
-let margherita = 2190
-let champiniones = 2940
-let pepperoni = 2940
-let capricciosa = 4390
+  const carritoDeCompra = [];
+  
+  mostrarMenu();
+  agregarAlCarrito(carritoDeCompra, 5);
+  agregarAlCarrito(carritoDeCompra, 6);
+  
+  console.log('Contenido del carrito:');
+  carritoDeCompra.forEach(pizza => {
+    console.log(`${pizza.nombre} - $${pizza.precio}`);
+  });
+  
+  console.log(`Total a pagar: $${calcularTotal(carritoDeCompra)}`); 
+  
 
-
-while (confirmarContinuacion !== 3) {
-    if (confirmarContinuacion === 1) {
-        finalizarCompra()
-        console.log("A continuacion veras tu carrito para finalizar tu compra")
-        console.log("*SE MOSTRARIA EL CARRITO*")
-        break
-    } else if (confirmarContinuacion === 2) {
-        agregarProducto()
-        
-    } 
-    confirmarContinuacion = parseInt(prompt(
-        "Que desea realizar a continuacion? \n 1: Finalizar Compra \n 2: Continuar Comprando \n 3: Cancelar Compra")
-    )
-}
-console.log("Gracias por utilizar nuestro servicio! Esperamos verlo nuevamente por aqui muy pronto!")
-
-
+  console.log("Gracias por utilizar nuestro servicio! Esperamos verlo nuevamente por aqui muy pronto!")
