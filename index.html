@@ -21,7 +21,6 @@
         <title>Rincon Italiano</title>
     
 <body class="bg-secondary">
-  <script src="js/main.js"></script>
 
     <!-- Inicio del menu -->
     
@@ -31,7 +30,7 @@
 
         <a class="navbar-brand" href="#"></a>
         <img src="../Icons/RinconItaliano.png" alt="Bootstrap" width="150" height="72">
-      </a>
+        </a>
             
         <!-- boton del menu -->
 
@@ -53,6 +52,8 @@
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Otros
               </a>
+
+           
 
               <ul class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="../Pages/conocenos.html">Nosotros</a></li>
@@ -84,19 +85,31 @@
             </li>
 
             <li class="nav-item col-6 col-md-auto p-3">
-              <i class="bi bi-facebook"></i>
-              <small class="d-md-none ms-2">Facebook</small>
+              <i class="bi bi-cart4" id="verCarrito"><span id="cantidadCarrito" class="cantidad-carrito"></span></i>
+              <small class="d-md-none ms-2" >Carrito</small>
             </li>
 
           </ul>
           
-    
-        </div>
-     
-        </div>  
       </nav>
+      
+
+
+<!--shop content-->
+  <div id="shopContent" class="shop-content"></div>
+
+<!--modal container-->
+<div id="modal-container" class="modal-container"></div>
+
+  <!-- JS-->
+  <script src="js/pizzas.js"></script>
+
+  <script src="js/main.js"></script>
+  
+  <script src="js/carrito.js"></script>
 
   </body>
+
 
   
         </header>
@@ -110,6 +123,8 @@
                 </div>
 
             </section>
+
+                 
 
             <div id="carouselExampleCaptions" class="carousel slide">
                 <div class="carousel-indicators">
@@ -150,7 +165,8 @@
                 </button>
               </div>
 
-           
+
+        
 
         <!--ESTRUCTURA #3 / FOOTER-->
         <footer>

@@ -1,5 +1,5 @@
-
-//Funciones
+//Funciones 
+/*
 function saludar () {
     let nombre = prompt("Porfavor, Ingrese su nombre:")
     console.log(
@@ -9,57 +9,67 @@ function saludar () {
         "A continuación, seleccione los productos que desea agregar a la orden"
         )
 }
-saludar()
+saludar() */
 
-  // Definir las opciones de pizza como objetos
+//Declaro variables y vinculo a HTML mediante Id.
+const shopContent = document.getElementById("shopContent");
+const verCarrito = document.getElementById("verCarrito");
+const modalContainer = document.getElementById("modal-container");
+const cantidadCarrito = document.getElementById("cantidadCarrito");
 
-  const pizzas = [
-    { id: 1, nombre: 'Pizza Margarita', precio: 2200 },
-    { id: 2, nombre: 'Pizza Pepperoni', precio: 2600 },
-    { id: 3, nombre: 'Pizza Vegetariana', precio: 2400 },
-    { id: 4, nombre: 'Pizza Hawaiana', precio: 2900 },
-    { id: 5, nombre: 'Pizza Capricciosa', precio: 3600 },
-    { id: 6, nombre: 'Pizza Champiniones', precio: 3200 }
-  ];
-  
-  // Función para mostrar las opciones de pizza
-  function mostrarMenu() {
-    console.log('Menú de Pizzas:');
-    pizzas.forEach(pizza => {
-      console.log(`${pizza.id}. ${pizza.nombre} - $${pizza.precio}`);
+
+//Declaro variable 'carrito' donde luego pushea lo clickeado y guardo
+let carrito = JSON.parse(localStorage.getItem("Carrito")) || [];
+
+//con '.forEach' recorro el array y '=>' asigna funcion.
+pizzas.forEach((pizza) => {
+  let content = document.createElement("div");
+  content.className = "card";
+  content.innerHTML = `
+    <img src="${pizza.img}">
+    <h3>${pizza.nombre}</h3>
+    <p class="price">${pizza.precio} $</p>
+  `;
+
+  shopContent.append(content);
+
+  //declaro variable comprar con elemento boton para comprar.
+  let comprar = document.createElement("button");
+  comprar.innerText =  "comprar";
+  comprar.className = "comprar";
+
+  content.append(comprar);
+
+  //Agrego al carrito lo clickeado.
+  comprar.addEventListener("click", () => {
+//.some() determina si al menos un miembro de la matriz satisface la prueba definida por la función dada devuelve valor booleano.
+  const repeat = carrito.some((repeatPizza) => repeatPizza.id === pizza.id);
+  if (repeat){
+    //.map() crea un nuevo array con los resultados de la llamada a la función indicada aplicados a cada uno de sus elementos.
+    carrito.map((prod)=> {
+      if (prod.id === pizza.id){
+        prod.quantity++
+      }
+    });
+  }else {
+
+    carrito.push({
+    id: pizza.id,
+    img: pizza.img,
+    nombre: pizza.nombre,
+    precio: pizza.precio,
+    quantity: pizza.quantity,
     });
   }
-  
-  // Función para agregar una pizza al carrito
-  function agregarAlCarrito(carrito, idPizza) {
-    const pizzaSeleccionada = pizzas.find(pizza => pizza.id === idPizza);
-    if (pizzaSeleccionada) {
-      carrito.push(pizzaSeleccionada);
-      console.log(`¡${pizzaSeleccionada.nombre} agregada al carrito!`);
-    } else {
-      console.log('Pizza no encontrada en el menú.');
-    }
-  }
-  
-  // Función para calcular el total del carrito
-  function calcularTotal(carrito) {
-    return carrito.reduce((total, pizza) => total + pizza.precio, 0);
-  }
-  
-  // Dandole un uso
-
-  const carritoDeCompra = [];
-  
-  mostrarMenu();
-  agregarAlCarrito(carritoDeCompra, 5);
-  agregarAlCarrito(carritoDeCompra, 6);
-  
-  console.log('Contenido del carrito:');
-  carritoDeCompra.forEach(pizza => {
-    console.log(`${pizza.nombre} - $${pizza.precio}`);
+    console.log(carrito);
+    carritoCounter();
+    saveLocal();
   });
-  
-  console.log(`Total a pagar: $${calcularTotal(carritoDeCompra)}`); 
-  
 
-  console.log("Gracias por utilizar nuestro servicio! Esperamos verlo nuevamente por aqui muy pronto!")
+});
+
+//setItem
+const saveLocal = () =>{
+localStorage.setItem('Carrito', JSON.stringify(carrito));
+};
+
