@@ -21,8 +21,13 @@ const cantidadCarrito = document.getElementById("cantidadCarrito");
 //Declaro variable 'carrito' donde luego pushea lo clickeado y guardo
 let carrito = JSON.parse(localStorage.getItem("Carrito")) || [];
 
-//con '.forEach' recorro el array y '=>' asigna funcion.
-pizzas.forEach((pizza) => {
+const getPizzas = async () => {
+  const response = await fetch("data.json");
+  const data = await response.json();
+  
+
+  //con '.forEach' recorro el array y '=>' asigna funcion.
+data.forEach((pizza) => {
   let content = document.createElement("div");
   content.className = "card";
   content.innerHTML = `
@@ -67,6 +72,10 @@ pizzas.forEach((pizza) => {
   });
 
 });
+
+};
+getPizzas();
+
 
 //setItem
 const saveLocal = () =>{
