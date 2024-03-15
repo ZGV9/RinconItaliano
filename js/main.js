@@ -11,6 +11,9 @@ function saludar () {
 }
 saludar() */
 
+
+
+
 //Declaro variables y vinculo a HTML mediante Id.
 const shopContent = document.getElementById("shopContent");
 const verCarrito = document.getElementById("verCarrito");
@@ -47,6 +50,21 @@ data.forEach((pizza) => {
 
   //Agrego al carrito lo clickeado.
   comprar.addEventListener("click", () => {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 2500,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      }
+    });
+    Toast.fire({
+      icon: "success",
+      title: "Se agrego al carrito 😎🍕"
+    });
 //.some() determina si al menos un miembro de la matriz satisface la prueba definida por la función dada devuelve valor booleano.
   const repeat = carrito.some((repeatPizza) => repeatPizza.id === pizza.id);
   if (repeat){
@@ -82,3 +100,33 @@ const saveLocal = () =>{
 localStorage.setItem('Carrito', JSON.stringify(carrito));
 };
 
+Swal.fire({
+  title:"Bienvenido a Rincon Italiano!",
+  text: "🍕Disfuta las mejores pizzas🍕",
+  background: "#bab782",
+  backdrop:true,
+  color: "#000",
+  timer:"4200",
+  timerProgressBar:true,
+   customClass: {
+  //   container: '...',
+    popup: 'popup',
+  //   header: '...',
+  //   title: '...',
+  //   closeButton: '...',
+  //   icon: '...',
+  //   image: '...',
+  //   htmlContainer: '...',
+  //   input: '...',
+  //   inputLabel: '...',
+  //   validationMessage: '...',
+  //   actions: '...',
+  //   confirmButton: '...',
+  //   denyButton: '...',
+  //   cancelButton: '...',
+  //   loader: '...',
+  //   footer: '....',
+  //   timerProgressBar: '....',
+   },
+  showConfirmButton:false,
+});

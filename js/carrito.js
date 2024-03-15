@@ -44,6 +44,22 @@ const RenderCarrito = () => {
 // con querySelector capturo la clase restar de carritoContent.
     let restar = carritoContent.querySelector(".restar")
     restar.addEventListener("click", () => {
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 1000,
+        timerProgressBar: false,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "error",
+        title: "Se quito del carrito."
+      });
         if(pizza.quantity !== 1) {
        pizza.quantity--;
     }
@@ -54,6 +70,22 @@ const RenderCarrito = () => {
 
     let sumar = carritoContent.querySelector(".sumar")
     sumar.addEventListener("click", () => {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 1000,
+        timerProgressBar: false,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "success",
+        title: "Se sumo al carrito."
+      });
+
        pizza.quantity++;
        saveLocal();  
         RenderCarrito();
