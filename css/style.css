@@ -56,7 +56,7 @@ footer {
 /*SECCION BANNER*/
 body {
   /* Propiedades para la imagen de fondo */
-  background-image: url("../Images/Banner.jpg");
+  background-image: url("../Images/wooden-background.jpg");
   background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
   background-position: center; /* Centra la imagen en el contenedor */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -68,6 +68,8 @@ body {
 
 /*Bienvenida de la pagina*/
 .banner_titulo {
+  padding-top: 4vh;
+  margin: 2vh;
   font-family: "Roboto Slab", sans-serif;
   position: relative;
   top: 50%; /* Posiciona el título en la mitad superior del contenedor */
@@ -229,34 +231,36 @@ body {
   margin-top: 50px;
   margin-left: 80px;
   margin-right: 80px;
-
+background-color: #000000;
 }
 .card {
   border: 1px solid #dbdbdb; /* Añadir un borde opcional */
   border-radius: 10px; /* Añadir bordes redondeados opcionalmente */
   box-shadow: 5px 5px 10px 7px #000000;
  margin: 7px;
+ background-color: #000000;
 }
 
 .shop-content img {
   display: flex;
   flex-wrap: wrap;
   max-width: 100%;
-  height: 200px;
- 
+  height: 180px;
+  background-color: #000000;
 }
 
 .price {
-  color: green;
+  color: #36f036;
   font-size: 22px;
   text-align: center;
+  background-color: #000000;
 }
 
 .card button {
   border: none;
   outline: 0;
   padding: 12px;
-  color: white;
+  color: rgb(255, 255, 255);
   background-color: black;
   text-align: center;
   cursor: pointer;
@@ -266,7 +270,7 @@ body {
 
 .card button:hover {
   opacity: 1.2;
-  color:lawngreen;
+  color:rgb(248, 189, 51);
 }
 
 .nav-item {
@@ -277,9 +281,9 @@ body {
 .modal-container {
   width: 80%;
   margin: 0 10%;
-  max-height: 88vh;
-  color: white;
-  background: radial-gradient(#6B8E23 0%, #000000 100%);
+  max-height: 90vh;
+  color: rgb(255, 255, 255);
+  background-image: url("../Images/wooden-background.jpg");
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -287,9 +291,9 @@ body {
   position: fixed;
   overflow: auto;
   z-index: 9;
-  top: 12vh;
-  scrollbar-color: none;
-  
+  top: 3vh;
+  scrollbar-color:  rgb(0, 0, 0) rgba(128, 128, 128, 0);
+  border: solid rgba(250, 128, 114, 0.261) 2vh;
 }
 
 /* para no mostrar la barra de scroll */
@@ -299,12 +303,15 @@ body {
 }
 
 .modal-header {
-  
   display: flex;
   justify-content: space-around;
-  background-color:black;
-  color: white;
+  background-color:rgba(0, 0, 0, 0.753);
+  color: rgb(255, 255, 255);
   width: 100%;
+  margin-left: 2vh;
+  border-radius: 30px;
+  border: groove rgba(244, 165, 96, 0.582) 20px;
+  padding-top: 10px;
 }
 
 .modal-header-title {
@@ -314,6 +321,7 @@ body {
 
 .modal-header-button {
   cursor: pointer;
+  
 }
 
 .modal-container > .modal-content {
@@ -356,4 +364,11 @@ body {
 
 .sumar, .restar {
   cursor: pointer;
+}
+
+#carouselExampleCaptions{
+  display: flex;
+  padding-bottom: 6vh;
+  margin-left: 12vh;
+  margin-right: 12vh;
 }

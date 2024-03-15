@@ -7,12 +7,12 @@ const RenderCarrito = () => {
     const modalHeader = document.createElement("div");
     modalHeader.className = "modal-header"
     modalHeader.innerHTML = `
-    <h1 class="modal-header-title">Carrito.</h1>
+    <h1 class="modal-header-title">Carrito</h1>
     `;
     modalContainer.append(modalHeader);
   
     const modalbutton = document.createElement("h1");
-    modalbutton.innerText = "x";
+    modalbutton.innerText = "❌";
     //classname me permite darle estilos en css mas tarde.
     modalbutton.className ="modal-header-button";
   
