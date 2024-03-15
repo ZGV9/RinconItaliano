@@ -345,10 +345,14 @@ border-radius: 7vh;
 }
 
 .total-content{
-  font-size: 25px;
+  font-size: 15px; font-family: Oswald;
   padding: 20px;
   text-align: center;
   padding-top:20px ;
+  background-color: #ca690e;
+  border-radius: 4vh;
+  color: #000000;
+  font-family: Oswald;
 }
 
 .delete-product{
@@ -367,8 +371,9 @@ border-radius: 7vh;
   display: none;
 }
 
-.sumar, .restar {
+.sumar, .restar, .cantidad {
   cursor: pointer;
+  
 }
 
 

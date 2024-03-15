@@ -33,7 +33,7 @@ const RenderCarrito = () => {
       <h3>${pizza.nombre}</h3>
       <p>$${pizza.precio} </p>
       <span class="restar"> - </span>
-      <p> Cantidad: ${pizza.quantity} </p>
+      <p class="cantidad"> Cantidad: ${pizza.quantity} </p>
       <span class="sumar"> + </span>
         <p> Total: ${pizza.quantity * pizza.precio}</p>
       `;
