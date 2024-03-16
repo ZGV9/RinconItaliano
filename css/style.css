@@ -320,11 +320,15 @@ border-radius: 7vh;
 
 .modal-header-title {
   justify-self: start;
-  font-size: 25px;
+  font-size: 18px;
 }
 
 .modal-header-button {
+  font-size:small;
   cursor: pointer;
+  padding: 4px;
+  border: solid whitesmoke 2px;
+  border-radius: 20px;
 
 }
 
